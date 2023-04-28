@@ -1,0 +1,74 @@
+.progress-item {
+  position: relative;
+  min-width: 8em;
+  padding: 4px 10px;
+  margin-left: -1px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 12px;
+  z-index: 1;
+}
+
+.progress-item::before,
+.progress-item::after {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  content: "";
+  height: 50%;
+  background: rgb(239, 239, 239);
+  box-sizing: border-box;
+  border: 2px solid #fff;
+}
+.progress-item::before {
+  top: 0;
+  border-bottom-width: 0;
+  transform: skewX(30deg);
+}
+.progress-item::after {
+  bottom: 0;
+  border-top-width: 0;
+  transform: skewX(-30deg);
+}
+
+.progress-item.succ::before,
+.progress-item.success::after {
+  background: rgb(236, 243, 253);
+}
+.progress-item.warn::before,
+.progress-item.warn::after {
+  background: rgb(253, 248, 239);
+}
+.progress-item.error::before,
+.progress-item.error::after {
+  background: rgb(251, 237, 236);
+}
+
+.check-same {
+  &::before {
+    content: "";
+    margin-right: 4px;
+    margin-top: -2px;
+    vertical-align: middle;
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgb(50, 133, 250);
+  }
+}
+
+.check-diff {
+  &::before {
+    content: "";
+    margin-right: 4px;
+    margin-top: -2px;
+    vertical-align: middle;
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgb(224, 37, 27);
+  }
+}

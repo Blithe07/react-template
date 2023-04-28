@@ -1,0 +1,16 @@
+.yh-checkbox-button {
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 2px 5px !important;
+  background: #fff;
+  :global(.ant-checkbox) {
+    display: none;
+  }
+  &:global(.ant-checkbox-wrapper-checked) {
+    background: rgb(253, 244, 243) !important;
+    color: rgb(224, 37, 27) !important;
+  }
+  &:global(.ant-checkbox-wrapper + .ant-checkbox-wrapper) {
+    margin-inline-start: 0;
+  }
+}

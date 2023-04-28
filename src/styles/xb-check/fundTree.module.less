@@ -1,0 +1,52 @@
+.fund-tree-container {
+  :global(.ant-tree-switcher) {
+    position: absolute !important;
+    right: 0;
+    color: rgba(0, 0, 0, 0.8) !important;
+  }
+  :global(.anticon-file) {
+    display: none;
+  }
+  :global(.ant-tree-treenode-selected) {
+    &::before {
+      background: rgb(253, 244, 243) !important;
+    }
+  }
+  :global(.ant-tree-node-selected) {
+    color: rgb(224, 37, 27) !important;
+  }
+}
+
+.leaf-node {
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    // background-color: rgb(224, 37, 27);
+    position: relative;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &.error {
+    &::before {
+      background-color: rgb(224, 37, 27);
+    }
+  }
+  &.succ {
+    &::before {
+      background-color: rgb(72, 136, 241);
+    }
+  }
+  &.warn {
+    &::before {
+      background-color: rgb(254, 182, 64);
+    }
+  }
+  &.none {
+    &::before {
+      background-color: rgb(153, 153, 153);
+    }
+  }
+}
